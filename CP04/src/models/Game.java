@@ -2,6 +2,8 @@ package models;
 
 import enums.GameGenreEnum;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 public class Game {
@@ -13,6 +15,8 @@ public class Game {
     private GameGenreEnum gameGenre;
     private GameGenreEnum gameGenre2 = GameGenreEnum.NA;
     private GameGenreEnum gameGenre3 = GameGenreEnum.NA;
+
+    private static List<Game> games = new ArrayList<>();
 
 
     public Game(){
@@ -116,6 +120,14 @@ public class Game {
         this.gameGenre3 = gameGenre3;
     }
 
+    public static List<Game> getGames() {
+        return games;
+    }
+
+    public static void setGames(List<Game> games) {
+        Game.games = games;
+    }
+
     @Override
     public String toString() {
         return "Game : {" +
@@ -127,7 +139,11 @@ public class Game {
                 "\n , Genre = " + this.gameGenre +
                 "\n , Genre 2 = " + this.gameGenre2 +
                 "\n , Genre 3 = " + this.gameGenre3 +
-                '}';
+                "}\n";
+    }
+
+    public static void addGame(Game game) {
+        games.add(game);
     }
 //
 }
