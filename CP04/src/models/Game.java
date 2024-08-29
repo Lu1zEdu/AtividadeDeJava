@@ -49,6 +49,7 @@ public class Game {
         this.developer = developer;
         this.publisher = publisher;
         this.gameGenre = gameGenre;
+
     }
 
     public int getId() {

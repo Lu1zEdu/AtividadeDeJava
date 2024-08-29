@@ -10,26 +10,27 @@ import java.util.stream.Collectors;
 public class Tests {
     private static void populateDefaultGames() {
         games.add(new Game(1, "The Witcher 3: Wild Hunt", "2015", "CD Projekt", "CD Projekt", GameGenreEnum.RPG, GameGenreEnum.ACTION, GameGenreEnum.OPEN_WORD));
-        games.add(new Game(2, "Hollow Knight", "2017", "Team Cherry", "Team Cherry", GameGenreEnum.METROIDVANIA, GameGenreEnum.INDIE, GameGenreEnum.NA));
-        games.add(new Game(3, "Celeste", "2018", "Matt Makes Games", "Matt Makes Games", GameGenreEnum.PLATFORMER, GameGenreEnum.INDIE, GameGenreEnum.NA));
-        games.add(new Game(4, "Final Fantasy VII", "1997", "Square", "Square", GameGenreEnum.JRPG, GameGenreEnum.TURN_BASED, GameGenreEnum.NA));
-        games.add(new Game(5, "Doki Doki Literature Club", "2017", "Team Salvato", "Team Salvato", GameGenreEnum.VISUAL_NOVEL, GameGenreEnum.NA, GameGenreEnum.NA));
+        games.add(new Game(2, "Hollow Knight", "2017", "Team Cherry", "Team Cherry", GameGenreEnum.METROIDVANIA, GameGenreEnum.INDIE));
+        games.add(new Game(3, "Celeste", "2018", "Matt Makes Games", "Matt Makes Games", GameGenreEnum.PLATFORMER, GameGenreEnum.INDIE));
+        games.add(new Game(4, "Final Fantasy VII", "1997", "Square", "Square", GameGenreEnum.JRPG, GameGenreEnum.TURN_BASED));
+        games.add(new Game(5, "Doki Doki Literature Club", "2017", "Team Salvato", "Team Salvato", GameGenreEnum.VISUAL_NOVEL));
         games.add(new Game(6, "League of Legends", "2009", "Riot Games", "Riot Games", GameGenreEnum.MULTIPLAYER, GameGenreEnum.PVP, GameGenreEnum.MOBA));
         games.add(new Game(7, "Call of Duty: Modern Warfare", "2019", "Infinity Ward", "Activision", GameGenreEnum.SHOOTER, GameGenreEnum.FIRST_PERSON, GameGenreEnum.MULTIPLAYER));
         games.add(new Game(8, "Dark Souls", "2011", "FromSoftware", "Namco Bandai", GameGenreEnum.SOULS_LIKE, GameGenreEnum.ACTION, GameGenreEnum.DIFFICULT));
-        games.add(new Game(9, "Journey", "2012", "Thatgamecompany", "Sony Computer Entertainment", GameGenreEnum.INDIE, GameGenreEnum.CHILL, GameGenreEnum.NA));
+        games.add(new Game(9, "Journey", "2012", "Thatgamecompany", "Sony Computer Entertainment", GameGenreEnum.INDIE, GameGenreEnum.CHILL));
         games.add(new Game(10, "Super Mario Odyssey", "2017", "Nintendo", "Nintendo", GameGenreEnum.PLATFORMER, GameGenreEnum.THREE_D, GameGenreEnum.ACTION));
-        games.add(new Game(11, "StarCraft", "1998", "Blizzard Entertainment", "Blizzard Entertainment", GameGenreEnum.STRATEGY, GameGenreEnum.NA, GameGenreEnum.MULTIPLAYER));
-        games.add(new Game(12, "Mortal Kombat", "1992", "Midway", "Warner Bros.", GameGenreEnum.FIGHTER, GameGenreEnum.NA, GameGenreEnum.MULTIPLAYER));
-        games.add(new Game(13, "Persona 5", "2016", "Atlus", "Atlus", GameGenreEnum.JRPG, GameGenreEnum.TURN_BASED, GameGenreEnum.NA));
+        games.add(new Game(11, "StarCraft", "1998", "Blizzard Entertainment", "Blizzard Entertainment", GameGenreEnum.STRATEGY, GameGenreEnum.MULTIPLAYER));
+        games.add(new Game(12, "Mortal Kombat", "1992", "Midway", "Warner Bros.", GameGenreEnum.FIGHTER, GameGenreEnum.MULTIPLAYER));
+        games.add(new Game(13, "Persona 5", "2016", "Atlus", "Atlus", GameGenreEnum.JRPG, GameGenreEnum.TURN_BASED));
         games.add(new Game(14, "Metal Gear Solid", "1998", "Konami", "Konami", GameGenreEnum.STEALTH, GameGenreEnum.ACTION, GameGenreEnum.FIRST_PERSON));
         games.add(new Game(15, "Sakura Spirit", "2014", "Winged Cloud", "Sekai Project", GameGenreEnum.HENTAI, GameGenreEnum.VISUAL_NOVEL, GameGenreEnum.ASIAN));
-        games.add(new Game(16, "HuniePop", "2015", "HuniePot", "HuniePot", GameGenreEnum.HENTAI, GameGenreEnum.NA, GameGenreEnum.NA));
+        games.add(new Game(16, "HuniePop", "2015", "HuniePot", "HuniePot", GameGenreEnum.HENTAI));
         games.add(new Game(17, "Nekopara Vol. 1", "2014", "Neko Works", "Sekai Project", GameGenreEnum.HENTAI, GameGenreEnum.VISUAL_NOVEL, GameGenreEnum.ASIAN));
         games.add(new Game(18, "Monster Girl Quest", "2011", "Torotoro Resistance", "Unknown", GameGenreEnum.HENTAI, GameGenreEnum.RPG, GameGenreEnum.ASIAN));
-        games.add(new Game(19, "Baldur's Gate 3", "2023", "Larian Studios", "Larian Studios", GameGenreEnum.RPG, GameGenreEnum.TURN_BASED, GameGenreEnum.NA));
-        games.add(new Game(20, "Ghostrunner", "2020", "One More Level", "505 Games", GameGenreEnum.ACTION, GameGenreEnum.FIRST_PERSON, GameGenreEnum.NA));
-        games.add(new Game(21, "Outer Wilds", "2019", "Mobius Digital", "Annapurna Interactive", GameGenreEnum.ADVENTURE, GameGenreEnum.EXPLORATION, GameGenreEnum.NA));
+        games.add(new Game(19, "Baldur's Gate 3", "2023", "Larian Studios", "Larian Studios", GameGenreEnum.RPG, GameGenreEnum.TURN_BASED));
+        games.add(new Game(20, "Ghostrunner", "2020", "One More Level", "505 Games", GameGenreEnum.ACTION, GameGenreEnum.FIRST_PERSON));
+        games.add(new Game(21, "Outer Wilds", "2019", "Mobius Digital", "Annapurna Interactive", GameGenreEnum.ADVENTURE, GameGenreEnum.EXPLORATION));
+        games.add(new Game(22, "Ghost of Tsushima", "2020", "Sucker Punch", "Sony Interactive", GameGenreEnum.ACTION, GameGenreEnum.EXPLORATION, GameGenreEnum.ASIAN));
     }
 
     private static List<Game> games = new ArrayList<>();
@@ -48,7 +49,7 @@ public class Tests {
                     "\n6- Delete" +
                     "\nEnter the desired operation: ");
             int option = scanner.nextInt();
-            scanner.nextLine(); // Consume newline
+            scanner.nextLine();
 
             switch (option) {
                 case 0:
@@ -93,22 +94,24 @@ public class Tests {
         System.out.print("Publisher: ");
         String publisher = scanner.nextLine();
 
-        System.out.print("Genre 1 (1 for ACTION, 2 for ADVENTURE, etc.): ");
-        int genreId1 = scanner.nextInt();
-        GameGenreEnum genre1 = GameGenreEnum.values()[genreId1 - 1];
+        // Get the genre from user input
+        System.out.print("Genre 1 (e.g., RPG, ACTION): ");
+        String genreName1 = scanner.nextLine().toUpperCase();
+        GameGenreEnum genre1 = GameGenreEnum.valueOf(genreName1);
 
-        System.out.print("Genre 2 (optional, 0 to skip): ");
-        int genreId2 = scanner.nextInt();
-        GameGenreEnum genre2 = (genreId2 == 0) ? GameGenreEnum.NA : GameGenreEnum.values()[genreId2 - 1];
+        System.out.print("Genre 2 (optional, leave blank to skip): ");
+        String genreName2 = scanner.nextLine().toUpperCase();
+        GameGenreEnum genre2 = genreName2.isEmpty() ? GameGenreEnum.NA : GameGenreEnum.valueOf(genreName2);
 
-        System.out.print("Genre 3 (optional, 0 to skip): ");
-        int genreId3 = scanner.nextInt();
-        GameGenreEnum genre3 = (genreId3 == 0) ? GameGenreEnum.NA : GameGenreEnum.values()[genreId3 - 1];
+        System.out.print("Genre 3 (optional, leave blank to skip): ");
+        String genreName3 = scanner.nextLine().toUpperCase();
+        GameGenreEnum genre3 = genreName3.isEmpty() ? GameGenreEnum.NA : GameGenreEnum.valueOf(genreName3);
 
         Game newGame = new Game(id, title, releaseYear, developer, publisher, genre1, genre2, genre3);
         games.add(newGame);
         System.out.println("Game successfully registered!");
     }
+
 
     private static void listGames() {
         System.out.println("List of Games:");
@@ -147,9 +150,9 @@ public class Tests {
 
         switch (criterion) {
             case 1:
-                System.out.print("Enter the genre (1 for ACTION, 2 for ADVENTURE, etc.): ");
-                int genreId = scanner.nextInt();
-                GameGenreEnum genre = GameGenreEnum.values()[genreId - 1];
+                System.out.print("Genre: ");
+                String genreName = scanner.nextLine().toUpperCase();
+                GameGenreEnum genre = genreName.isEmpty() ? GameGenreEnum.NA : GameGenreEnum.valueOf(genreName);
                 List<Game> byGenre = games.stream().filter(g -> g.getGameGenre() == genre || g.getGameGenre2() == genre || g.getGameGenre3() == genre).collect(Collectors.toList());
                 printGames(byGenre);
                 break;
@@ -215,20 +218,26 @@ public class Tests {
             String publisher = scanner.nextLine();
             if (!publisher.isEmpty()) game.setPublisher(publisher);
 
-            System.out.print("New genre 1 (0 to keep current, 1 for ACTION, 2 for ADVENTURE, etc.): ");
-            int genreId1 = scanner.nextInt();
-            scanner.nextLine(); // Consume newline
-            if (genreId1 != 0) game.setGameGenre(GameGenreEnum.values()[genreId1 - 1]);
+            System.out.print("Genre (leave blank to keep current): ");
+            String genreName = scanner.nextLine().toUpperCase();
+            if (!genreName.isEmpty()) {
+                GameGenreEnum genre = GameGenreEnum.valueOf(genreName);
+                game.setGameGenre(genre);
+            }
 
-            System.out.print("New genre 2 (0 to keep current): ");
-            int genreId2 = scanner.nextInt();
-            scanner.nextLine(); // Consume newline
-            if (genreId2 != 0) game.setGameGenre2(GameGenreEnum.values()[genreId2 - 1]);
+            System.out.print("Genre 2 (leave blank to keep current): ");
+            String genreName2 = scanner.nextLine().toUpperCase();
+            if (!genreName2.isEmpty()) {
+                GameGenreEnum genre2 = GameGenreEnum.valueOf(genreName2);
+                game.setGameGenre2(genre2);
+            }
 
-            System.out.print("New genre 3 (0 to keep current): ");
-            int genreId3 = scanner.nextInt();
-            scanner.nextLine(); // Consume newline
-            if (genreId3 != 0) game.setGameGenre3(GameGenreEnum.values()[genreId3 - 1]);
+            System.out.print("Genre 3 (leave blank to keep current): ");
+            String genreName3 = scanner.nextLine().toUpperCase();
+            if (!genreName3.isEmpty()) {
+                GameGenreEnum genre3 = GameGenreEnum.valueOf(genreName3);
+                game.setGameGenre3(genre3);
+            }
 
             System.out.println("Game successfully updated!");
         } else {
