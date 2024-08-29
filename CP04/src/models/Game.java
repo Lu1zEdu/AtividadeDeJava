@@ -2,6 +2,10 @@ package models;
 
 import enums.GameGenreEnum;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -124,7 +128,7 @@ public class Game {
         return games;
     }
 
-    public static void setGames(List<Game> games) {
+    private static void setGames(List<Game> games) {
         Game.games = games;
     }
 
@@ -144,6 +148,45 @@ public class Game {
 
     public static void addGame(Game game) {
         games.add(game);
+    }
+
+    public static void writeGamesToCSV(String fileName) {
+        try (FileWriter writer = new FileWriter(fileName)) {
+            for (Game game : games) {
+                writer.append(String.valueOf(game.getId())).append(",");
+                writer.append(game.getTitle()).append(",");
+                writer.append(game.getDeveloper()).append(",");
+                writer.append(game.getPublisher()).append(",");
+                writer.append(game.getRelease_year()).append(",");
+                writer.append(game.getGameGenre().toString()).append(",");
+                writer.append(game.getGameGenre2().toString()).append(",");
+                writer.append(game.getGameGenre3().toString()).append("\n");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            throw new RuntimeException(e);
+        }
+    }
+    public static void readGamesFromCSV(String fileName) {
+        String line;
+        try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
+            while ((line = reader.readLine()) != null) {
+                String[] values = line.split(",");
+                Game game = new Game(
+                        Integer.parseInt(values[0]),
+                        values[1],
+                        values[2],
+                        values[3],
+                        values[4],
+                        GameGenreEnum.valueOf(values[5]),
+                        GameGenreEnum.valueOf(values[6]),
+                        GameGenreEnum.valueOf(values[7])
+                );
+                games.add(game);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 //
 }

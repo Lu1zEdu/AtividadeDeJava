@@ -8,7 +8,7 @@ import java.util.Scanner;
 import java.util.stream.Collectors;
 
 public class Tests {
-    private static void populateDefaultGames() {
+    /*private static void populateDefaultGames() {
         Game.addGame(new Game(1, "The Witcher 3: Wild Hunt", "2015", "CD Projekt", "CD Projekt", GameGenreEnum.RPG, GameGenreEnum.ACTION, GameGenreEnum.OPEN_WORD));
         Game.addGame(new Game(2, "Hollow Knight", "2017", "Team Cherry", "Team Cherry", GameGenreEnum.METROIDVANIA, GameGenreEnum.INDIE));
         Game.addGame(new Game(3, "Celeste", "2018", "Matt Makes Games", "Matt Makes Games", GameGenreEnum.PLATFORMER, GameGenreEnum.INDIE));
@@ -31,12 +31,16 @@ public class Tests {
         Game.addGame(new Game(20, "Ghostrunner", "2020", "One More Level", "505 Games", GameGenreEnum.ACTION, GameGenreEnum.FIRST_PERSON));
         Game.addGame(new Game(21, "Outer Wilds", "2019", "Mobius Digital", "Annapurna Interactive", GameGenreEnum.ADVENTURE, GameGenreEnum.EXPLORATION));
         Game.addGame(new Game(22, "Ghost of Tsushima", "2020", "Sucker Punch", "Sony Interactive", GameGenreEnum.ACTION, GameGenreEnum.EXPLORATION, GameGenreEnum.ASIAN));
+    }*/
+    private static void populateDefaultGames() {
+        Game.readGamesFromCSV("games.csv");
     }
 
     private static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
         populateDefaultGames();
+        Game.writeGamesToCSV("games.csv");
         while (true) {
             System.out.println("Menu" +
                     "\n0- Exit" +
@@ -108,6 +112,7 @@ public class Tests {
 
         Game newGame = new Game(id, title, releaseYear, developer, publisher, genre1, genre2, genre3);
         Game.addGame(newGame);
+        Game.writeGamesToCSV("games.csv");
         System.out.println("Game successfully registered!");
     }
 
@@ -237,7 +242,7 @@ public class Tests {
                 GameGenreEnum genre3 = GameGenreEnum.valueOf(genreName3);
                 game.setGameGenre3(genre3);
             }
-
+            Game.writeGamesToCSV("games.csv");
             System.out.println("Game successfully updated!");
         } else {
             System.out.println("Game not found.");
@@ -251,6 +256,7 @@ public class Tests {
         Game game = Game.getGames().stream().filter(g -> g.getId() == id).findFirst().orElse(null);
         if (game != null) {
             Game.getGames().remove(game);
+            Game.writeGamesToCSV("games.csv");
             System.out.println("Game successfully deleted!");
         } else {
             System.out.println("Game not found.");
