@@ -44,9 +44,7 @@ public enum GameGenreEnum {
     MOBA,
     ASIAN,
     OCEAN,
+    EXPLORATION,
+    ADVENTURE,
     NA,
-
-
-
-
 }
