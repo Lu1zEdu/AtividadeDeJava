@@ -1,6 +1,25 @@
 1,The Witcher 3: Wild Hunt,2015,CD Projekt,CD Projekt,RPG,ACTION,OPEN_WORD
 2,Hollow Knight,2017,Team Cherry,Team Cherry,METROIDVANIA,INDIE,NA
-30,TEST20,TEST19,9999,TEST20,ACTION,NA,NA
-5,Ghost of Tsushima,2020,Sucker Punch,Sony,ACTION,ASIAN,ADVENTURE
-7,Horizon Zero Dawn,2027,Forgot,Sony,ACTION,ADVENTURE,EXPLORATION
-9,Project Wingman,2028,Bruh,Bruh,FIGHTER,ACTION,NA
+3,Celeste,2018,Matt Makes Games,Matt Makes Games,PLATFORMER,INDIE,NA
+4,Final Fantasy VII,1997,Square,Square,JRPG,TURN_BASED,NA
+5,Doki Doki Literature Club,2017,Team Salvato,Team Salvato,VISUAL_NOVEL,NA,NA
+6,League of Legends,2009,Riot Games,Riot Games,MULTIPLAYER,PVP,MOBA
+7,Call of Duty: Modern Warfare,2019,Infinity Ward,Activision,SHOOTER,FIRST_PERSON,MULTIPLAYER
+8,Dark Souls,2011,FromSoftware,Namco Bandai,SOULS_LIKE,ACTION,DIFFICULT
+9,Journey,2012,Thatgamecompany,Sony Computer Entertainment,INDIE,CHILL,NA
+10,Super Mario Odyssey,2017,Nintendo,Nintendo,PLATFORMER,THREE_D,ACTION
+11,StarCraft,1998,Blizzard Entertainment,Blizzard Entertainment,STRATEGY,MULTIPLAYER,NA
+12,Mortal Kombat,1992,Midway,Warner Bros.,FIGHTER,MULTIPLAYER,NA
+13,Persona 5,2016,Atlus,Atlus,JRPG,TURN_BASED,NA
+14,Metal Gear Solid,1998,Konami,Konami,STEALTH,ACTION,FIRST_PERSON
+15,Sakura Spirit,2014,Winged Cloud,Sekai Project,HENTAI,VISUAL_NOVEL,ASIAN
+16,HuniePop,2015,HuniePot,HuniePot,HENTAI,NA,NA
+17,Nekopara Vol. 1,2014,Neko Works,Sekai Project,HENTAI,VISUAL_NOVEL,ASIAN
+18,Monster Girl Quest,2011,Torotoro Resistance,Unknown,HENTAI,RPG,ASIAN
+19,Baldur's Gate 3,2023,Larian Studios,Larian Studios,RPG,TURN_BASED,NA
+20,Ghostrunner,2020,One More Level,505 Games,ACTION,FIRST_PERSON,NA
+21,Outer Wilds,2019,Mobius Digital,Annapurna Interactive,ADVENTURE,EXPLORATION,NA
+23,God of War,2018,Santa Monica,Sony,ACTION,THIRD_PERSON,DIFFICULT
+22,Ghost of Tsushima,2020,Sucker Punch,Sony Interactive,ACTION,EXPLORATION,ASIAN
+24,Horizon Zero Dawn,2027,Forgot,Sony,ACTION,ADVENTURE,EXPLORATION
+25,Project Wingman,2028,Sector 2D,Humble Games,FIGHTER,ACTION,NA
