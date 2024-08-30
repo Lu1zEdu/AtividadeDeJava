@@ -39,7 +39,6 @@ public class Tests {
 
     public static void main(String[] args) {
         populateDefaultGames();
-        Game.writeGamesToCSV("games.csv");
         while (true) {
             System.out.println("Menu" +
                     "\n0- Exit" +
@@ -137,7 +136,7 @@ public class Tests {
         scanner.nextLine(); // Consume newline
         Game game = Game.getGames().stream().filter(g -> g.getId() == id).findFirst().orElse(null);
         if (game != null) {
-            System.out.println("Game found:");
+            System.out.println("Game found:" + game);
         } else {
             System.out.println("Game not found.");
         }

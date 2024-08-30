@@ -173,9 +173,9 @@ public class Game {
             for (Game game : games) {
                 writer.append(String.valueOf(game.getId())).append(",");
                 writer.append(game.getTitle()).append(",");
+                writer.append(game.getRelease_year()).append(",");
                 writer.append(game.getDeveloper()).append(",");
                 writer.append(game.getPublisher()).append(",");
-                writer.append(game.getRelease_year()).append(",");
                 writer.append(game.getGameGenre().toString()).append(",");
                 writer.append(game.getGameGenre2().toString()).append(",");
                 writer.append(game.getGameGenre3().toString()).append("\n");
