@@ -3,6 +3,7 @@ package tests;
 import enums.GameGenreEnum;
 import models.Game;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 import java.util.stream.Collectors;
@@ -50,6 +51,7 @@ public class Tests {
                     "\n4- Consult by Criteria" +
                     "\n5- Update" +
                     "\n6- Delete" +
+                    "\n7- Display Genres" +
                     "\nEnter the desired operation: ");
             int option = scanner.nextInt();
             scanner.nextLine();
@@ -75,6 +77,9 @@ public class Tests {
                     break;
                 case 6:
                     deleteGame();
+                    break;
+                case 7:
+                    showGenres(Game.getGames());
                     break;
                 default:
                     System.out.println("Invalid option");
@@ -135,7 +140,6 @@ public class Tests {
         Game game = Game.getGames().stream().filter(g -> g.getId() == id).findFirst().orElse(null);
         if (game != null) {
             System.out.println("Game found:");
-            System.out.println(game);
         } else {
             System.out.println("Game not found.");
         }
@@ -194,9 +198,7 @@ public class Tests {
         if (gamesList.isEmpty()) {
             System.out.println("No games found.");
         } else {
-            for (Game game : gamesList) {
-                System.out.println(game);
-            }
+            gamesList.stream().forEach(game -> System.out.println(game));
         }
     }
 
@@ -260,6 +262,23 @@ public class Tests {
             System.out.println("Game successfully deleted!");
         } else {
             System.out.println("Game not found.");
+        }
+    }
+
+    public static void showGenres(List<Game> games) {
+
+        List<List<GameGenreEnum>> allGenres = new ArrayList<>();
+
+        for (Game game : games) {
+            List<GameGenreEnum> gameGenres = new ArrayList<>();
+            gameGenres.add(game.getGameGenre());
+            gameGenres.add(game.getGameGenre2());
+            gameGenres.add(game.getGameGenre3());
+
+            allGenres.add(gameGenres);
+        }
+        for (List<GameGenreEnum> genres : allGenres) {
+            System.out.println(genres);
         }
     }
 }

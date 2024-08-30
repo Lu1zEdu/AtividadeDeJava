@@ -1,14 +1,17 @@
 package models;
 
-import enums.GameGenreEnum;
 
+import enums.GameGenreEnum;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
+
+
 
 public class Game {
     private int id;
@@ -19,7 +22,8 @@ public class Game {
     private GameGenreEnum gameGenre;
     private GameGenreEnum gameGenre2 = GameGenreEnum.NA;
     private GameGenreEnum gameGenre3 = GameGenreEnum.NA;
-
+    private List<GameGenreEnum> genresList = new ArrayList<>() {
+    };
     private static List<Game> games = new ArrayList<>();
 
 
@@ -30,6 +34,7 @@ public class Game {
 
     public Game(int id, String title, String release_year, String developer, String publisher, GameGenreEnum gameGenre,
                 GameGenreEnum gameGenre2, GameGenreEnum  gameGenre3) {
+
         this.id = id;
         this.title = title;
         this.release_year = release_year;
@@ -38,6 +43,7 @@ public class Game {
         this.gameGenre = gameGenre;
         this.gameGenre2 = gameGenre2;
         this.gameGenre3 = gameGenre3;
+        this.genresList.addAll(Arrays.asList(this.gameGenre, this.gameGenre2, this.gameGenre3));
     }
     public Game(int id, String title, String release_year, String developer, String publisher, GameGenreEnum gameGenre,
                 GameGenreEnum gameGenre2) {
@@ -48,6 +54,8 @@ public class Game {
         this.publisher = publisher;
         this.gameGenre = gameGenre;
         this.gameGenre2 = gameGenre2;
+        this.genresList.addAll(Arrays.asList(this.gameGenre, this.gameGenre2));
+        System.out.println(genresList);
 
     }
     public Game(int id, String title, String release_year, String developer, String publisher, GameGenreEnum gameGenre) {
@@ -57,6 +65,8 @@ public class Game {
         this.developer = developer;
         this.publisher = publisher;
         this.gameGenre = gameGenre;
+        this.genresList.add(this.gameGenre);
+        System.out.println(genresList);
 
     }
 
@@ -132,6 +142,14 @@ public class Game {
         Game.games = games;
     }
 
+    public List<GameGenreEnum> getGenresList() {
+        return genresList;
+    }
+
+    public void setGenresList(List<GameGenreEnum> genresList) {
+        this.genresList = genresList;
+    }
+
     @Override
     public String toString() {
         return "Game : {" +
@@ -188,5 +206,8 @@ public class Game {
             e.printStackTrace();
         }
     }
+
+
+
 //
 }
