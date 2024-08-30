@@ -2,10 +2,8 @@ package tests;
 
 import enums.GameGenreEnum;
 import models.Game;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
+
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Tests {
@@ -271,14 +269,31 @@ public class Tests {
 
         for (Game game : games) {
             List<GameGenreEnum> gameGenres = new ArrayList<>();
+
             gameGenres.add(game.getGameGenre());
             gameGenres.add(game.getGameGenre2());
             gameGenres.add(game.getGameGenre3());
 
             allGenres.add(gameGenres);
         }
+        System.out.println("Genres for each game, in sequence: \n");
+        allGenres.stream().forEach(genreList -> System.out.println(genreList));
+
+        System.out.println("\nOccurance of each genre: \n");
+
+        Map<GameGenreEnum, Integer> genreCountMap = new HashMap<>();
+
         for (List<GameGenreEnum> genres : allGenres) {
-            System.out.println(genres);
+            for (GameGenreEnum genre : genres) {
+                if (genre != null) {
+                    genreCountMap.put(genre, genreCountMap.getOrDefault(genre, 0) + 1);
+                }
+            }
         }
+
+        for (Map.Entry<GameGenreEnum, Integer> genre : genreCountMap.entrySet()) {
+            System.out.println(genre.getKey() + " - " + genre.getValue());
+        }
+
     }
 }
